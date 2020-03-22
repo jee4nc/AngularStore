@@ -13,6 +13,7 @@ import { BannerComponent } from './banner/banner.component';
 import { ProductComponent } from './product/product.component';
 import { PagenNotFoundComponent } from './pagen-not-found/pagen-not-found.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { LayoutComponent } from './layout/layout.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
     BannerComponent,
     ProductComponent,
     PagenNotFoundComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,

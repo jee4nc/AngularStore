@@ -16,7 +16,7 @@ const routes: Routes = [
   {
     path: '',  // esto sirve para poder redirigir a home cuando no alla path
     redirectTo: 'home',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
   {
     path: 'home',
