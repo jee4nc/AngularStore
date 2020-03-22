@@ -1,0 +1,13 @@
+img {
+    max-width: 100%;
+}
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    // grid-template-rows: 400px;
+    justify-content: center;
+    gap: 5px;
+}
+.card{
+    border: 4px solid black;
+}
