@@ -6,11 +6,18 @@ import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { DemoComponent } from './demo/demo.component';
 import { ProductsComponent } from './products/products.component';
+import { PagenNotFoundComponent } from './pagen-not-found/pagen-not-found.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 
 
 
 const routes: Routes = [
+  {
+    path: '',  // esto sirve para poder redirigir a home cuando no alla path
+    redirectTo: 'home',
+    pathMatch: 'full'
+  },
   {
     path: 'home',
     component: HomeComponent
@@ -26,6 +33,14 @@ const routes: Routes = [
   {
     path: 'products',
     component: ProductsComponent
+  },
+  {
+    path: 'products/:id',
+    component: ProductDetailComponent
+  },
+  {
+    path: '**', // este doble ** significa que si no hay match, mandara aqui
+    component: PagenNotFoundComponent
   }
 ];
 
