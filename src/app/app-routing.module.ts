@@ -5,6 +5,7 @@ import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { DemoComponent } from './demo/demo.component';
 import { PagenNotFoundComponent } from './pagen-not-found/pagen-not-found.component';
 import { LayoutComponent } from './layout/layout.component';
+import { AdminGuard} from './admin.guard';
 
 
 
@@ -26,6 +27,7 @@ const routes: Routes = [
       },
       {
         path: 'contact',
+        canActivate: [AdminGuard],
         loadChildren: () => import('./contact/contact.module')
         .then(m => m.ContacModule)
       },
@@ -33,11 +35,6 @@ const routes: Routes = [
         path: 'products',
         loadChildren: () => import('./../app/products/product.module')
         .then(m => m.ProductModule)
-      },
-      {
-        path: 'products/:id',
-        loadChildren: () => import('./product-details/product-details.module')
-        .then(m => m.ProductDetailsModule)
       }
     ] // dsdds
   },
