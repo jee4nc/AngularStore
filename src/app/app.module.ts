@@ -7,7 +7,6 @@ import { CoreModule} from './core/core.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DemoComponent } from './demo/demo.component';
-import { ContactComponent } from './contact/contact.component';
 import { ProductsComponent } from './products/products.component';
 import { ProductComponent } from './product/product.component';
 import { PagenNotFoundComponent } from './pagen-not-found/pagen-not-found.component';
@@ -18,12 +17,11 @@ import { LayoutComponent } from './layout/layout.component';
   declarations: [
     AppComponent,
     DemoComponent,
-    ContactComponent,
     ProductsComponent,
     ProductComponent,
     PagenNotFoundComponent,
     ProductDetailComponent,
-    LayoutComponent
+    LayoutComponent,
   ],
   imports: [
     BrowserModule,
