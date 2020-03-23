@@ -3,9 +3,7 @@ import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
 // IMPORTANDO COMPONENTES PARA RUTES
 import { DemoComponent } from './demo/demo.component';
-import { ProductsComponent } from './products/products.component';
 import { PagenNotFoundComponent } from './pagen-not-found/pagen-not-found.component';
-import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { LayoutComponent } from './layout/layout.component';
 
 
@@ -33,11 +31,13 @@ const routes: Routes = [
       },
       {
         path: 'products',
-        component: ProductsComponent
+        loadChildren: () => import('./../app/products/product.module')
+        .then(m => m.ProductModule)
       },
       {
         path: 'products/:id',
-        component: ProductDetailComponent
+        loadChildren: () => import('./product-details/product-details.module')
+        .then(m => m.ProductDetailsModule)
       }
     ] // dsdds
   },
