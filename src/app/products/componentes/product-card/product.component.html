@@ -3,7 +3,7 @@
         <img [src]="pro.image" alt="iamgen">
         <p> {{ pro.title }} </p>
         <p> {{ pro.description }} </p>
-        <a [routerLink]="['/products', pro.id]">Ver Detalle</a> <!-- Se cooncadena el URL-->
+        <a mat-raised-button color="primary" [routerLink]="['/products', pro.id]">Ver Detalle</a> <!-- Se cooncadena el URL-->
     </div>
 </div>
 
