@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { DemoComponent } from './demo/demo.component';
 import { PagenNotFoundComponent } from './pagen-not-found/pagen-not-found.component';
 import { LayoutComponent } from './layout/layout.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { LayoutComponent } from './layout/layout.component';
     AppRoutingModule,
     SharedModule,
     CoreModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
