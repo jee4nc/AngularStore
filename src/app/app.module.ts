@@ -10,7 +10,10 @@ import { DemoComponent } from './demo/demo.component';
 import { PagenNotFoundComponent } from './pagen-not-found/pagen-not-found.component';
 import { LayoutComponent } from './layout/layout.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+
+import { HttpClientModule } from '@angular/common/http'; // Aca se importa para que la app pueda acceder a
+                                                         // conexiones http
+
 @NgModule({
   declarations: [
     AppComponent,

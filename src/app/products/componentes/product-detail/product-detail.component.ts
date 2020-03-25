@@ -23,11 +23,23 @@ export class ProductDetailComponent implements OnInit {
       // this.product = this.productsService.getProduct(id);
     });
   }
-  fetchProduct(id: string){
+  fetchProduct(id: string) {
     this.productsService.getProduct(id)
     .subscribe(product => {
       this.product = product;
     });
-
+  }
+  crearProduct() {
+    const newProduct: Product = {
+      id: '222',
+      title: 'nuevo desde angular',
+      image: 'assets/banner-2.jpg',
+      price: 3000,
+      description: 'nuevo productillo'
+    };
+    this.productsService.createProduct(newProduct)
+    .subscribe(product => {
+      console.log(product);
+    });
   }
 }
