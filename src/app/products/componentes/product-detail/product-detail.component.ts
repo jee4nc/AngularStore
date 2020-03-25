@@ -42,4 +42,23 @@ export class ProductDetailComponent implements OnInit {
       console.log(product);
     });
   }
-}
+  updateProduct() {
+    const changeProduct: Partial<Product> = {
+      title: 'producto updateado',
+      image: 'assets/banner-3.jpg',
+      price: 99999,
+      description: 'fri fayer'
+    };
+    this.productsService.updateProduct('123', changeProduct)
+    .subscribe( product => {
+      console.log(product);
+    });
+    }
+    deleteProducto() {
+      this.productsService.deleteProduct('222')
+      .subscribe( rta => {
+        console.log(rta);
+      });
+    }
+  }
+
