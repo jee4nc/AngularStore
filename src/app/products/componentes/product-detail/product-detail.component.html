@@ -1,6 +1,8 @@
-<div>
-    <img [src]="product.image" alt="">
-</div>
-<div>
-    <h1> {{ product.title }} </h1>
+<div *ngIf="product"> <!-- Este ngIf permite que meintras product no sea true, no cargara la img-->
+    <div>
+        <img [src]="product.image" alt="">
+    </div>
+    <div>
+        <h1> {{ product.title }} </h1>
+    </div>
 </div>

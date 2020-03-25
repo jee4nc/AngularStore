@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, ChildActivationStart } from '@angular/router';
 import { ProductsService} from './../../../core/services/products.service'; // se importa el servicio
 import {Product} from './../../../products/componentes/product-card/product.model'; // se importa la interfaz
 
@@ -19,8 +19,15 @@ export class ProductDetailComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
       const id = params.id;
+      this.fetchProduct(id);
       // this.product = this.productsService.getProduct(id);
     });
   }
+  fetchProduct(id: string){
+    this.productsService.getProduct(id)
+    .subscribe(product => {
+      this.product = product;
+    });
 
+  }
 }
