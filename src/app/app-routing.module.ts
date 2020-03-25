@@ -43,6 +43,11 @@ const routes: Routes = [
     component: DemoComponent
   },
   {
+    path: 'admin',
+        loadChildren: () => import('./../app/admin/admin.module')
+        .then(m => m.AdminModule)
+  },
+  {
     path: '**', // este doble ** significa que si no hay match, mandara aqui
     component: PagenNotFoundComponent
   }
