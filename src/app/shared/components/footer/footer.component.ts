@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators} from '@angular/forms'; // Esto me permite ocupar el control
 
 @Component({
   selector: 'app-footer',
@@ -7,9 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  emailField: FormControl; // Se tipa la variable
+
+  constructor() {
+    this.emailField = new FormControl('',
+    [// Validators.minLength(4),
+    // Validators.maxLength(20),
+    Validators.email,
+    Validators.required
+    ]); // Se crea y se instancia en footer.html
+    // this.emailField.valueChanges
+    // .subscribe(value => {
+    //   console.log(value);
+    // });
+  }
 
   ngOnInit(): void {
   }
-
+  sendEMail() {
+    if(this.emailField.valid) {
+      console.log(this.emailField.value);
+    }
+  }
 }

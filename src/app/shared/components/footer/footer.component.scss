@@ -1,3 +1,25 @@
 .footer-row{
     width: 100%;
 }
+.container{
+    display: grid;
+    height: 110%;
+    grid-template-areas: "hola mano contacto input"
+                            "hola mano contacto input";
+    justify-items: center;
+    align-items: center;
+}
+.soyfooter {
+    grid-area: hola;
+}
+.soyIcon{
+    grid-area: mano;
+}
+.hola p{
+    padding-top: 10px;
+    padding-bottom: 0px;
+    grid-area: contacto;
+}
+.inpuut {
+    grid-area: input;
+}

@@ -5,11 +5,22 @@
 </div> -->
 <mat-toolbar color="primary">
     <mat-toolbar-row>
-        <div class="row between-xs middle-xs footer-row" >
-            <span>Soy el Footer</span>
-            <span>
+        <div class="container" >
+            <span class="soyfooter">Soy el Footer</span>
+            <span class="soyIcon">
                 <mat-icon>thumb_up</mat-icon>
             </span>
+            <div class="hola">
+                <p>Contactanos</p>
+            </div>
+            <div class="inpuut">
+                <mat-form-field>
+                    <input matInput placeholder="Digite su correo" [formControl]="emailField" type="text" >
+                </mat-form-field>
+                <button  mat-raised-button [disabled]="emailField.invalid" (click)="sendEMail()"> <!-- Valid es si el valor es true -->
+                    Enviar
+                </button>
+            </div>
         </div>
     </mat-toolbar-row>
 </mat-toolbar>
