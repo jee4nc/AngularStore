@@ -7,11 +7,12 @@ import { MaterialModule } from './../material/material.module';
 import { NavComponent } from './component/nav/nav.component';
 import { TableComponent } from './component/table/table.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
+import { ProductListComponent } from './component/product-list/product-list.component';
 
 
 
 @NgModule({
-  declarations: [ProductFormComponent, NavComponent, TableComponent, DashboardComponent],
+  declarations: [ProductFormComponent, NavComponent, TableComponent, DashboardComponent, ProductListComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,

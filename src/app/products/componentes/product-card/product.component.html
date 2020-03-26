@@ -12,7 +12,7 @@
             <img [src]="pro.image" alt="iamgen">
         </div>
         <mat-card-content>
-            <p>{{ pro.description }}</p>
+            <p>{{ pro.description | slice:1:10}}</p>
         </mat-card-content>
         <mat-card-actions>
             <a mat-raised-button color="primary" [routerLink]="['/products', pro.id]">Ver Detalle</a>
