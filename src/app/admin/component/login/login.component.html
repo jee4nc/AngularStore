@@ -1,3 +1,4 @@
+
 <form [formGroup]="form" (ngSubmit)="iniciarSesion($event)">
     <mat-card>
         <mat-card-header>Login</mat-card-header>
@@ -8,6 +9,13 @@
                 <mat-form-field>
                     <input placeholder="user" formControlName="user" matInput type="text">
                 </mat-form-field>
+                <div *ngIf="userField.errors && userField.dirty"> <!-- Es lo mismo que los if de abajo solo que ocupo la variable del ts-->
+                    <!-- <p *ngIf="form.get('user').hasError('user_invalid')">Error</p> -->
+                    <!-- <p *ngIf="form.get('user').hasError('required')">Este campo es obligatorio</p> -->
+                    <mat-error *ngIf="userField.hasError('maxlength')">Superaste el maximo de caracteres</mat-error>
+                    <mat-error *ngIf="userField.hasError('minlength')">Tienen que ser igual o superior a 4 caracteres</mat-error>
+                    <mat-error *ngIf="userField.hasError('required')">Este campo es obligatorio</mat-error>
+                </div>
             </mat-card-content>
         </div>
     </div>
@@ -17,6 +25,11 @@
                 <mat-form-field>
                     <input placeholder="password" formControlName="password" matInput type="password">
                 </mat-form-field>
+                <div *ngIf="passField.errors && passField.dirty">
+                    <mat-error *ngIf="passField.hasError('required')">Este campo es obligatorio</mat-error>
+                    <mat-error *ngIf="passField.hasError('minlength')">Contraseña muy corta</mat-error>
+                    <mat-error *ngIf="passField.hasError('maxlength')">Contraseña muy larga</mat-error>
+                </div>
             </mat-card-content>
         </div>
     </div>

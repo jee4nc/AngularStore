@@ -31,4 +31,13 @@ export class RegisterComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]]
     });
   }
+  get userField() {
+    return this.form.get('user');
+  }
+  get passField() {
+    return this.form.get('password');
+  }
+  get emailField() {
+    return this.form.get('email');
+  }
 }

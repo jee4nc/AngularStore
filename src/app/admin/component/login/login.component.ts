@@ -30,4 +30,10 @@ export class LoginComponent implements OnInit {
       password: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(20)]]
     });
   }
+  get userField() {
+    return this.form.get('user');
+  }
+  get passField() {
+    return this.form.get('password');
+  }
 }
