@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/app/core/services/cart.service';
+import { map } from 'rxjs/operators'; // pipe de rxjs
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -7,15 +9,15 @@ import { CartService } from 'src/app/core/services/cart.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  total = 0;
+  total$: Observable<number>; // hacemos a total observable
 
   constructor(
     private cartService: CartService
   ) {
-    this.cartService.cart$.subscribe(products => {
-      console.log(products);
-      this.total = products.length;
-    });
+    this.total$ = this.cartService.cart$
+    .pipe(  // Es el mismo contador de objetos pero con pipe de map
+      map(products => products.length)
+    );
   }
   ngOnInit(): void {
   }
