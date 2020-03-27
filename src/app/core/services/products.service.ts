@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 // HTTPCLIENT permite poder acceder a las conexiones http
 
-import { Product } from 'src/app/products/componentes/product-card/product.model';
+import { Product } from '../services/product.model';
 import { environment } from '../../../environments/environment';
 
 @Injectable({
