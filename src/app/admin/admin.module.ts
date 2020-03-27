@@ -11,11 +11,20 @@ import { ProductListComponent } from './component/product-list/product-list.comp
 import { FormProductComponent } from './component/form-product/form-product.component';
 import { LoginComponent } from './component/login/login.component';
 import { RegisterComponent } from './component/register/register.component';
+import { ProductEditComponent } from './component/product-edit/product-edit.component';
 
 
 
 @NgModule({
-  declarations: [ProductFormComponent, NavComponent, TableComponent, DashboardComponent, ProductListComponent, FormProductComponent, LoginComponent, RegisterComponent],
+  declarations: [ProductFormComponent,
+    NavComponent,
+    TableComponent,
+    DashboardComponent,
+    ProductListComponent,
+    FormProductComponent,
+    LoginComponent,
+    RegisterComponent,
+    ProductEditComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,

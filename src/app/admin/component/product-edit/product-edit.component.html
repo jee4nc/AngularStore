@@ -1,0 +1,37 @@
+<form [formGroup]="form" (ngSubmit)="saveProduct($event)"> <!--$event es buena practica para manejar el evento-->
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Producto</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+                <div class="row">
+                    <div class="col-xs">
+                        <mat-form-field>
+                            <input placeholder="title" formControlName="title" matInput type="text">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs">
+                        <mat-form-field>
+                            <input placeholder="price" formControlName="price" matInput type="number">
+                        </mat-form-field>
+                        <div *ngIf="priceField.errors && priceField.dirty"> <!-- Es lo mismo que los if de abajo solo que ocupo la variable del ts-->
+                            <p *ngIf="form.get('price').hasError('price_invalid')">Este valor excede el maximo de 13 mil</p>
+                            <p *ngIf="form.get('price').hasError('required')">Este campo es obligatorio</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs">
+                        <mat-form-field>
+                            <textarea placeholder="description" formControlName="description" matInput type="text"></textarea>
+                        </mat-form-field>
+                    </div>
+                </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button [disabled]="form.invalid" mat-raised-button type="submit">Actualizar Producto</button>
+        </mat-card-actions>
+    </mat-card>
+</form>

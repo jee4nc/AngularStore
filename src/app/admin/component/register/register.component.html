@@ -1,7 +1,7 @@
-<form [formGroup]="form" (ngSubmit)="crearCuenta($event)">
+<button mat-raised-button routerLink="..">Volver a Login</button>
+<form [formGroup]="form" (ngSubmit)="crearCuenta($event)" class="card">
     <mat-card>
-        <mat-card-header>Registrar cuenta Admin</mat-card-header>
-    </mat-card>
+        <mat-card-header class="boton">Registrar cuenta Admin</mat-card-header>
     <div class="row">
         <div class="col-xs">
             <mat-card-content>
@@ -46,4 +46,5 @@
     <mat-card-actions>
         <button [disabled]="form.invalid" mat-raised-button type="submit">Iniciar Sesion</button>
     </mat-card-actions>
+</mat-card>
 </form>

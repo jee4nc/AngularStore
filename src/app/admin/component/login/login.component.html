@@ -1,8 +1,8 @@
 
-<form [formGroup]="form" (ngSubmit)="iniciarSesion($event)">
-    <mat-card>
-        <mat-card-header>Login</mat-card-header>
-    </mat-card>
+<button mat-raised-button routerLink="register">Registrarse</button>
+<form [formGroup]="form" (ngSubmit)="iniciarSesion($event)" class="card">
+    <mat-card >
+        <mat-card-header class="boton">Login</mat-card-header>
     <div class="row">
         <div class="col-xs">
             <mat-card-content>
@@ -36,4 +36,5 @@
     <mat-card-actions>
         <button [disabled]="form.invalid" mat-raised-button type="submit">Iniciar Sesion</button>
     </mat-card-actions>
+</mat-card>
 </form>
