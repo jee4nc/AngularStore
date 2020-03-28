@@ -38,6 +38,7 @@
                 </div>
                 <div class="row">
                     <div class="col-xs">
+                        <img *ngIf="(image$ | async) as image" [src]="image" alt="" class="jej">
                         <input type="file" (change)="uploadFile($event)">
                     </div>
                 </div>

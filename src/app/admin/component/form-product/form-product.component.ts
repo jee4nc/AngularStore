@@ -5,6 +5,8 @@ import { Router } from '@angular/router';
 import { MyValidators} from '../../../utils/validators';
 
 import {AngularFireStorage} from '@angular/fire/storage';
+import {finalize} from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-form-product',
@@ -14,6 +16,7 @@ import {AngularFireStorage} from '@angular/fire/storage';
 export class FormProductComponent implements OnInit {
 
   form: FormGroup;
+  image$: Observable<any>;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -41,6 +44,19 @@ export class FormProductComponent implements OnInit {
   }
   uploadFile(event) {
     const file = event.target.files[0];
+    const name = 'images';
+    const fileRef = this.storage.ref(name);
+    const task  = this.storage.upload(name, file);
+    task.snapshotChanges()
+    .pipe(
+      finalize(() => {
+        this.image$ = fileRef.getDownloadURL();
+        this.image$.subscribe(url =>{
+          this.form.get('image').setValue(url);
+        });
+      }) // Esto es para subir el archivo
+    )
+    .subscribe();
     console.log(file);
   }
   private buildForm() {
