@@ -1,4 +1,4 @@
-<button mat-raised-button routerLink="..">Volver a Login</button>
+<button mat-raised-button (click)="paralogin()" >Volver a Login</button>
 <form [formGroup]="form" (ngSubmit)="crearCuenta($event)" class="card">
     <mat-card>
         <mat-card-header class="boton">Registrar cuenta Admin</mat-card-header>

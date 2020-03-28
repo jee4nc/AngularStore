@@ -44,4 +44,7 @@ export class RegisterComponent implements OnInit {
   get emailField() {
     return this.form.get('email');
   }
+  paralogin() {
+    this.router.navigate(['/auth/login']);
+  }
 }

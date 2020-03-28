@@ -3,6 +3,9 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms'; // Esto es 
 import { ProductsService } from './../../../core/services/products.service';
 import { Router } from '@angular/router';
 import { MyValidators} from '../../../utils/validators';
+
+import {AngularFireStorage} from '@angular/fire/storage';
+
 @Component({
   selector: 'app-form-product',
   templateUrl: './form-product.component.html',
@@ -15,7 +18,8 @@ export class FormProductComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private productsService: ProductsService,
-    private router: Router
+    private router: Router,
+    private storage: AngularFireStorage
   ) {
      this.buildForm(); // lo inicializamos
   }
@@ -34,6 +38,10 @@ export class FormProductComponent implements OnInit {
       });
     }
     console.log(this.form.value);
+  }
+  uploadFile(event) {
+    const file = event.target.files[0];
+    console.log(file);
   }
   private buildForm() {
     this.form = this.formBuilder.group({

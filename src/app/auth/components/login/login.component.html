@@ -1,5 +1,6 @@
 
-<button mat-raised-button routerLink="register">Registrarse</button>
+<button mat-raised-button (click)="pararegistro()" color="primary">Registrarse</button>
+<button mat-raised-button (click)="parahome()" color="warn">Volver a inicio</button>
 <form [formGroup]="form" (ngSubmit)="iniciarSesion($event)" class="card">
     <mat-card >
         <mat-card-header class="boton">Login</mat-card-header>

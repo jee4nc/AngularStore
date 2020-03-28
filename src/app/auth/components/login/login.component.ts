@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
     if (this.form.valid) {
       const loger = this.form.value;
       this.authService.login(loger.email, loger.password)
-      .then(() =>{
+      .then(() => {
         this.router.navigate(['/admin']);
       })
       .catch(() => {
@@ -46,5 +46,11 @@ export class LoginComponent implements OnInit {
   }
   get passField() {
     return this.form.get('password');
+  }
+  pararegistro() {
+    this.router.navigate(['/auth/register']);
+  }
+  parahome() {
+    this.router.navigate(['/home']);
   }
 }
