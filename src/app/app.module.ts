@@ -11,6 +11,11 @@ import { PagenNotFoundComponent } from './pagen-not-found/pagen-not-found.compon
 import { LayoutComponent } from './layout/layout.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireStorageModule} from '@angular/fire/storage';
+import { environment } from '../environments/environment';
+
 import { HttpClientModule } from '@angular/common/http'; // Aca se importa para que la app pueda acceder a
                                                          // conexiones http
 
@@ -27,7 +32,10 @@ import { HttpClientModule } from '@angular/common/http'; // Aca se importa para 
     SharedModule,
     CoreModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFireStorageModule
   ],
   providers: [],
   bootstrap: [AppComponent]

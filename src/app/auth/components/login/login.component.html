@@ -7,14 +7,13 @@
         <div class="col-xs">
             <mat-card-content>
                 <mat-form-field>
-                    <input placeholder="user" formControlName="user" matInput type="text">
+                    <input placeholder="email" formControlName="email" matInput type="email">
                 </mat-form-field>
-                <div *ngIf="userField.errors && userField.dirty"> <!-- Es lo mismo que los if de abajo solo que ocupo la variable del ts-->
+                <div *ngIf="emailField.errors && emailField.dirty"> <!-- Es lo mismo que los if de abajo solo que ocupo la variable del ts-->
                     <!-- <p *ngIf="form.get('user').hasError('user_invalid')">Error</p> -->
                     <!-- <p *ngIf="form.get('user').hasError('required')">Este campo es obligatorio</p> -->
-                    <mat-error *ngIf="userField.hasError('maxlength')">Superaste el maximo de caracteres</mat-error>
-                    <mat-error *ngIf="userField.hasError('minlength')">Tienen que ser igual o superior a 4 caracteres</mat-error>
-                    <mat-error *ngIf="userField.hasError('required')">Este campo es obligatorio</mat-error>
+                    <mat-error *ngIf="emailField.hasError('email')">Tiene que ser un email valido</mat-error>
+                    <mat-error *ngIf="emailField.hasError('required')">Este campo es obligatorio</mat-error>
                 </div>
             </mat-card-content>
         </div>

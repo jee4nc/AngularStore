@@ -6,12 +6,11 @@
         <div class="col-xs">
             <mat-card-content>
                 <mat-form-field>
-                    <input placeholder="user" formControlName="user" matInput type="text">
+                    <input placeholder="email" formControlName="email" matInput type="email">
                 </mat-form-field>
-                <div *ngIf="userField.invalid && userField.dirty">
-                    <mat-error *ngIf="userField.hasError('required')">Este campo es obligatorio</mat-error>
-                    <mat-error *ngIf="userField.hasError('minlength')">Tiene que tener al menos 4 caracteres</mat-error>
-                    <mat-error *ngIf="userField.hasError('maxlength')">Supera el maximo de caracteres(20)</mat-error>
+                <div *ngIf="emailField.invalid && emailField.dirty">
+                    <mat-error *ngIf="emailField.hasError('required')">Este campo es obligatorio</mat-error>
+                    <mat-error *ngIf="emailField.hasError('email')">Tiene que ser un correo valido</mat-error>
                 </div>
             </mat-card-content>
         </div>
@@ -26,19 +25,6 @@
                     <mat-error *ngIf="passField.hasError('required')">Este campo es obligatorio</mat-error>
                     <mat-error *ngIf="passField.hasError('minlength')">Tiene que tener al menos 4 caracteres</mat-error>
                     <mat-error *ngIf="passField.hasError('maxlength')">Supera el maximo de caracteres(20)</mat-error>
-                </div>
-            </mat-card-content>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs">
-            <mat-card-content>
-                <mat-form-field>
-                    <input placeholder="email" formControlName="email" matInput type="email">
-                </mat-form-field>
-                <div *ngIf="emailField.invalid && emailField.dirty">
-                    <mat-error *ngIf="emailField.hasError('required')">Este campo es obligatorio</mat-error>
-                    <mat-error *ngIf="emailField.hasError('email')">Tiene que ser un correo valido</mat-error>
                 </div>
             </mat-card-content>
         </div>

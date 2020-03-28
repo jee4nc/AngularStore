@@ -27,7 +27,6 @@ const routes: Routes = [
       },
       {
         path: 'contact',
-        canActivate: [AdminGuard],
         loadChildren: () => import('./contact/contact.module')
         .then(m => m.ContacModule)
       },
@@ -49,8 +48,14 @@ const routes: Routes = [
   },
   {
     path: 'admin',
+    canActivate: [AdminGuard],
         loadChildren: () => import('./../app/admin/admin.module')
         .then(m => m.AdminModule)
+  },
+  {
+    path: 'auth',
+    loadChildren: () => import('./../app/auth/auth.module')
+    .then(m => m.AuthModule)
   },
   {
     path: '**', // este doble ** significa que si no hay match, mandara aqui
