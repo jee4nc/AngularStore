@@ -51,7 +51,7 @@ export class FormProductComponent implements OnInit {
     .pipe(
       finalize(() => {
         this.image$ = fileRef.getDownloadURL();
-        this.image$.subscribe(url =>{
+        this.image$.subscribe(url => {
           this.form.get('image').setValue(url);
         });
       }) // Esto es para subir el archivo
